@@ -1,95 +1,123 @@
 :root {
-    --fuente-titulos: 'Poppins', sans-serif;
-    --fuente-cuerpo: 'Open Sans', sans-serif;
-    --violet: hsl(257, 40%, 49%);
-    --soft-magenta: hsl(300, 69%, 71%);
-    --white: hsl(0, 0%, 100%);
+  --fuente-titulos: "Poppins", sans-serif;
+  --fuente-cuerpo: "Open Sans", sans-serif;
+  --violet: hsl(257, 40%, 49%);
+  --soft-magenta: hsl(300, 69%, 71%);
+  --white: hsl(0, 0%, 100%);
 }
 * {
-    box-sizing: border-box;
- 
+  box-sizing: border-box;
 }
 body {
-    background-image: url("/images/bg-desktop.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: var(--violet);
+  background-image: url("../images/bg-desktop.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--violet);
 }
 .contenedor {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 55% 42%;
-    grid-template-rows: 19% 70% 7%;
-    grid-template-areas: "header header"
-                        "image claim"
-                        "footer social";
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 55% 42%;
+  grid-template-rows: 19% 70% 7%;
+  grid-template-areas:
+    "header header"
+    "image claim"
+    "footer social";
 }
 #header {
-    grid-area: header;
-    justify-self: flex-start;
-    align-self: center;
-    /* margin: auto auto; */
-    padding: 0px 70px;
+  grid-area: header;
+  justify-self: flex-start;
+  align-self: center;
+  padding: 0px 70px;
 }
 #header img {
-    width: 55%;
+  width: 55%;
 }
 #image {
-    grid-area: image;
-    padding: 0px 70px;
+  grid-area: image;
+  padding: 0px 70px;
 }
 #image img {
-    width: 100%;
+  width: 100%;
 }
 #claim {
-    grid-area: claim;
-    padding-right: 70px;
+  grid-area: claim;
+  padding-right: 70px;
 }
 #social {
-    grid-area: social;
-    color: var(--white);
-    display: flex;
-    align-self: center;
-    justify-content: flex-end;
-    font-size: 1.5em;
-    padding-right: 80px;
+  grid-area: social;
+  color: var(--white);
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  font-size: 1.5em;
+  padding-right: 80px;
 }
 #social i {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 #footer {
-    grid-area: footer;
-    display: flex;
-    justify-content: flex-start;
+  grid-area: footer;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px 70px;
 }
 h1 {
-    font-family: var(--fuente-titulos);
-    color: var(--white);
+  font-family: var(--fuente-titulos);
+  color: var(--white);
 }
 p {
-    font-family: var(--fuente-cuerpo);
-    color: var(--white);
+  font-family: var(--fuente-cuerpo);
+  color: var(--white);
 }
 .boton {
-    background-color: var(--white);
-    filter: drop-shadow(2px 2px 5px hsl(257, 44%, 22%));
-    border-radius: 70px;
-    padding: 15px 65px;
-    border: 0;
-    margin-top: 8px;
-    font-size: 1em;
-    color: var(--violet);
+  background-color: var(--white);
+  filter: drop-shadow(2px 2px 5px hsl(257, 44%, 22%));
+  border-radius: 70px;
+  padding: 15px 65px;
+  border: 0;
+  margin-top: 8px;
+  font-size: 1em;
+  color: var(--violet);
 }
 .boton:active {
-    background-color: var(--soft-magenta);
-    color: var(--white);
-    cursor: pointer;
+  background-color: var(--soft-magenta);
+  color: var(--white);
+  cursor: pointer;
 }
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  font-family: var(--fuente-cuerpo);
 }
 .attribution a {
-    color: hsla(9, 98%, 55%, 0.781); 
+  color: hsla(9, 98%, 55%, 0.781);
+}
+@media screen and (max-width: 815px) {
+  body {
+    background-image: url("../images/bg-mobile.svg");
+  }
+  .contenedor {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, 25%);
+    grid-gap: 25px;
+    grid-template-areas:
+      "header"
+      "image"
+      "claim"
+      "social"
+      "footer";
+  }
+  #header,
+  #image,
+  #claim,
+  #footer,
+  #social {
+    padding: 0px 30px 0px 30px;
+    margin-top: 35px;
+    text-align: center;
+  }
 }
