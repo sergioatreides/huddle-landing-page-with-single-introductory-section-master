@@ -20,7 +20,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 55% 42%;
-    grid-template-rows: 20% 70% 10%;
+    grid-template-rows: 19% 70% 7%;
     grid-template-areas: "header header"
                         "image claim"
                         "footer social";
@@ -29,6 +29,7 @@ body {
     grid-area: header;
     justify-self: flex-start;
     align-self: center;
+    /* margin: auto auto; */
     padding: 0px 70px;
 }
 #header img {
@@ -47,9 +48,20 @@ body {
 }
 #social {
     grid-area: social;
+    color: var(--white);
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    font-size: 1.5em;
+    padding-right: 80px;
+}
+#social i {
+    margin-left: 20px;
 }
 #footer {
     grid-area: footer;
+    display: flex;
+    justify-content: flex-start;
 }
 h1 {
     font-family: var(--fuente-titulos);
@@ -63,25 +75,17 @@ p {
     background-color: var(--white);
     filter: drop-shadow(2px 2px 5px hsl(257, 44%, 22%));
     border-radius: 70px;
-    padding: 20px 65px;
+    padding: 15px 65px;
     border: 0;
     margin-top: 8px;
     font-size: 1em;
     color: var(--violet);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+.boton:active {
+    background-color: var(--soft-magenta);
+    color: var(--white);
+    cursor: pointer;
+}
 .attribution { 
     font-size: 11px; 
     text-align: center; 
